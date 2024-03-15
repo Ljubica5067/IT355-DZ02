@@ -10,6 +10,7 @@ import org.example.servisi.KrugService;
 import org.example.servisi.KvadratService;
 import org.springframework.context.annotation.Bean;
 
+@EnableAspectJAutoProxy
 public class AppConfig {
     @Bean
     public OblikService kvadratService(Oblik kvadrat) {
@@ -36,5 +37,27 @@ public class AppConfig {
     @Bean
     public Oblik jednakostranicniTrougao() {
         return new JednakostranicniTrougao(5);
+    }
+
+    @Bean
+    public BeforeAspekt aspekti() {
+        return new BeforeAspekt();
+    }
+    @Bean
+    public AfterAspekt askept2(){
+        return new AfterAspekt();
+    }
+    @Bean
+    public AfterReturningAspekt askept3(){
+        return new AfterReturningAspekt();
+    }
+
+    @Bean
+    public AfterThrowingAspekt askept4(){
+        return new AfterThrowingAspekt();
+    }
+    @Bean
+    public AroundAspekt askept5(){
+        return new AroundAspekt();
     }
 }

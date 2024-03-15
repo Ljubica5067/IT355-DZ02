@@ -13,11 +13,17 @@ public class JednakostranicniTrougao implements Oblik {
 
     @Override
     public double obim() {
-        return 3*a;
+
+        if (a <= 0) {
+            throw new IllegalArgumentException("Vrednost mora biti veca od 0");
+        }return 3*a;
     }
 
     @Override
     public double povrsina() {
-        return (Math.sqrt(3) / 4) * Math.pow(a, 2);
+
+        if (a <= 0) {
+            throw new IllegalArgumentException("Vrednost mora biti veca od 0");
+        }return (Math.sqrt(3) / 4) * Math.pow(a, 2);
     }
 }
